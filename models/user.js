@@ -12,11 +12,27 @@ Complete your other field here
 
 var userSchema = mongoose.Schema({
   //Write your code here.
+  name:{
+    type:String,
+    required:true
+  },
+  password:{
+    type:String,
+    required:true
+  },
+  role:{
+    type:String,
+    enum:['user','admin'],
+    default:'user'
+  },
+  email:{
+    type:String,
+    requried:true
+  }
 },
 
-{ /* ... */ }
+{ timestamps:true }
 
 );
 
 module.exports = mongoose.model("User", userSchema);
-
